@@ -666,7 +666,7 @@ border: 1px solid #ffffff;
 }
 
 .close-button {
-border-radius: 100%;
+border-radius: 50%;
 background-color: #e7e9fc;
 width: 24px;
 height: 24px;
@@ -676,10 +676,16 @@ position: absolute;
 top: 24px;
 right: 24px;
 border: 1px solid rgba(0, 0, 0, 0.1);
+fill: #2e2f42;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-close {
-    fill: #2e2f42;
+
+.close-button:hover,
+.close-button:focus {
+   fill: #ffffff; 
+   background-color: #404bbf;
 }
 
 .form-title {
@@ -693,11 +699,19 @@ font-weight: 500;
 }
 .form-field {
     margin-bottom: 8px;
+ 
+}
+
+.form-label {
+    display: block;
     font-weight: 400;
-        font-size: 12px;
-        line-height: 1.16667;
-        letter-spacing: 0.04em;
-        color:#8e8f99;   
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    margin-bottom: 4px;
+    
+
 }
 
 .form-field input:hover {
@@ -710,43 +724,50 @@ border: 1px solid #4d5ae5;
 }
 
 
-.input-wrapper {
-    margin-top: 4px;
-}
-
 .form-input {
-border: 1px solid #2e2f42;
-border-radius: 4px;
-padding-left: 38px;
-width: 18px;
-/* position: relative; */
-width: 100%;
-height: 40px;
-font-weight: 400;
+    border: 1px solid #2e2f42;
+    border-radius: 4px;
+    padding-left: 38px;
+    width: 18px;
+    width: 100%;
+    height: 40px;
+    font-weight: 400;
     font-size: 12px;
     line-height: 1.16667;
     letter-spacing: 0.04em;
     color:#8e8f99;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
+.input-wrapper {
+    position: relative;
+}
 
+.form-icon {
+    fill: #2e2f42;
+        width: 18px;
+        height: 24px;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+}
 
-.form-icon-name {
+/* .form-icon-name {
     fill: #2e2f42;
     width: 18px;
     height: 24px;
     position: absolute;
     left: 40px;
     top: 138px;
-}
-
-/* .form-icon-name:hover {
-    fill: #4d5ae5;
 } */
 
-.form-icon-phone {
+/* .form-icon-phone {
     fill: #2e2f42;
-width: 18px;
+    width: 18px;
     height: 24px;
     position: absolute;
     left: 40px;
@@ -760,14 +781,22 @@ width: 18px;
     position: absolute;
     left: 40px;
     top: 270px;
+} */
+
+.form-field-textarea {
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
 }
 
 .textarea-input {
     width: 100%;
     min-height: 120px;
     margin-top: 4px;
-    padding-left: 16px;
-    padding-top: 8px;
+   padding: 8px 16px;
     border: 1px solid #2e2f42;
     border-radius: 4px;
     font-weight: 400;
@@ -775,15 +804,10 @@ width: 18px;
     line-height: 1.16667;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
 textarea::placeholder {
-font-weight: 400;
-    font-size: 12px;
-
-    line-height: 1.16667;
-    letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
 }
 
@@ -795,11 +819,6 @@ border: 1px solid #4d5ae5;
     color: #4d5ae5;
 
 }
-/* 
-.form-label.checkbox {
-    flex-direction: row;
-    justify-content: center;
-} */
 
 input[type="checkbox"] {
     width: 16px;
@@ -808,22 +827,36 @@ input[type="checkbox"] {
     justify-content: center;
    
 }
-.checkbox-wrapped {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    margin-top: 16px;
-    height: 16px;
-    width: 100%;
-}
 
-.text-checkbox {
-font-weight: 400;
+.form-label.checkbox {
+    font-weight: 400;
     font-size: 12px;
     line-height: 1.16667;
     letter-spacing: 0.04em;
     color: #8e8f99;
+}
 
+.span-checkbox {
+   display: inline-flex;
+    align-items: center;
+    justify-content: center; 
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    margin-right: 8px;   
+    background-color: transparent;
+    fill: transparent;   
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+input:checked + label > .span-checkbox {
+border: 1px solid #404bbf;
+background-color: #404bbf;
+fill: #ffffff;
 }
 
 .privacy-policy {
@@ -831,6 +864,13 @@ line-height: 1.33333;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #4d5ae5;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.privacy-policy:hover,
+.privacy-policy:focus {
+    color: #404bbf;
 }
 
 
