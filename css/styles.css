@@ -769,10 +769,13 @@ border: 1px solid #4d5ae5;
         
 }
 
+.form-field-textarea {
+    margin-bottom: 16px;
+}
+
 .textarea-input {
     width: 100%;
     height: 120px;
-    margin-top: 4px;
     padding: 8px 16px;
     border: 1px solid rgb(46, 47, 66, 0.4);
     border-radius: 4px;
@@ -807,20 +810,21 @@ input[type="checkbox"] {
     width: 16px;
     height: 16px;
     align-items: center;
-    justify-content: center;
-   
+    justify-content: center; 
 }
 
-.form-checkbox {
-    margin-bottom: 24px;
-}
 
+/* 
 .form-label.checkbox {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+} */
+
+.form-checkbox {
+    margin-bottom: 24px;
 }
 
 .span-checkbox {
@@ -842,7 +846,7 @@ input[type="checkbox"] {
 input:checked + label > .span-checkbox {
 border: none;
 background-color: #404bbf;
-fill: #f4f4f4;
+fill: #f4f4fd;
 }
 
 
