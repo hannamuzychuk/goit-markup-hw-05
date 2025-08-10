@@ -537,10 +537,10 @@ textarea {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #ffffff;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
 }
 
-.subscribe-list {
+.subscribe-form {
     display: flex;
     gap: 24px;
 }
@@ -548,21 +548,22 @@ textarea {
 .form-input-subscribe {
     height: 40px;
     width: 264px;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    padding-left: 16px;
     border: 1px solid #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    background-color: #2e2f42;
+    background-color: transparent;
     color: #ffffff;
+    outline: transparent;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input-subscribe::placeholder {
-        padding-left: 16px;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 2;
-        letter-spacing: 0.04em;
         color: #ffffff;
 }
 
@@ -578,6 +579,7 @@ textarea {
 
 
 .subscribe-button {
+    font-family: "Roboto", sans-serif;
     color: #ffffff;
     background-color: #4d5ae5;
     font-weight: 500;
@@ -590,16 +592,16 @@ textarea {
     padding:8px 24px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     min-width: 165px;
     height: 40px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.subscribe-icon
-{
+.subscribe-icon {
     fill: #ffffff;
     align-items: center;
+    margin-left: 16px;
 }
 
 .subscribe-button:hover,
@@ -626,11 +628,11 @@ textarea {
 
 }
 
-.modal-overlay.is-open {
+/* .modal-overlay.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto; 
-} 
+}  */
 
 .modal {
     position: absolute;
